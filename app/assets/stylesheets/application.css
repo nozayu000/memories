@@ -13,3 +13,73 @@
  *= require_tree .
  *= require_self
  */
+
+ /*全体*/
+ body{
+   background-color: white;
+   color:black;
+   margin: 0; padding: 0;
+   font-family: meiryo, sans-serif;
+ }
+
+ /*リンク*/
+   a:link {color: #00c;}
+   a:visited {color: #00c;}
+   a:hover { color: #f00;}
+   a img{ border: none;}
+
+
+/*全体枠*/
+div#container{
+  margin: 0 auto;
+  padding-top: 5px;
+  width: 780px;
+}
+/*左の枠*/
+main{
+  float: left;
+  width: 530px;
+  padding: 10px 10px 10px 0;
+}
+/*右の枠*/
+aside#sidebar{
+  float: left;
+  width: 230px;
+  background-color: #e8ffff;
+  padding: 5px;
+  font-size: 86%;
+}
+/*メニューバーのリンク*/
+nav.menubar a { text-decoration: none;}
+/*メニューバーのリンク（未訪問）*/
+nav.menubar a:link {color: #ccc;}
+/*メニューバーのリンク（訪問済）*/
+nav.menubar a:visited { color:#ccc;}
+
+
+p, h1, h2, h3, table, ul {
+  margin: 0 0 1em;
+}
+
+nav ul,
+ul.toolbar,
+ul.links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li,
+div.toolbar li,
+ul.toolbar li,
+ul.links li {
+  display: inline;
+}
+header {
+  border-top: 4px solid #6bb;
+  padding-top: 4px;
+}
+
+ul.account-menu {
+  text-align: right;
+}

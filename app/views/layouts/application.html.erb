@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Memories</title>
+    <title><%= page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id= "container">
+      <header>
+        <%= render "common/header" %>
+      </header>
+      <main>
+        <%= yield %>
+      </main>
+      <aside id="sidebar">
+        <%= render "common/sidebar" %>
+      </aside>
+      <footer>
+        <%= render "common/footer" %>
+      </footer>
+    </div>
   </body>
 </html>
