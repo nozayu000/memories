@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_31_061720) do
+ActiveRecord::Schema.define(version: 2022_01_05_130950) do
+
+  create_table "members", force: :cascade do |t|
+    t.string "nickname", null: false
+    t.string "full_name"
+    t.string "email"
+    t.date "birthday"
+    t.integer "public", default: 1, null: false
+    t.boolean "administrator", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "phone"
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
