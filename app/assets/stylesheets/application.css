@@ -83,3 +83,10 @@ header {
 ul.account-menu {
   text-align: right;
 }
+
+ul.toolbar,
+div.toolbar {
+  padding:  15px 0;
+  font-size: 90%;
+  text-align: right;
+}
