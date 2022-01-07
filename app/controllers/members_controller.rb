@@ -10,9 +10,11 @@ class MembersController < ApplicationController
   end
 
   def new
+    @member = Member.new(birthday: Date.new(1990, 1, 1))
   end
 
   def edit
+    @member = Member.find(params[:id])
   end
 
   def create

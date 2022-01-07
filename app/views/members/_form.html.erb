@@ -1,0 +1,33 @@
+<table class ="attr" >
+  <tr>
+    <th><%= form.label :nickname, "ユーザー名" %></th>
+    <td><%= form.text_field :nickname %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :full_name, "氏名" %></th>
+    <td><%= form.text_field :full_name %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :birthday, "誕生日",
+              for: "member_birthday_1i" %></th>
+    <td><%= form.date_select :birthday,
+              start_year: 1990, end_year: Time.current.year,
+              use_month_numbers: true %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :email, "メールアドレス" %></th>
+    <td><%= form.text_field :email %></td>
+  </tr>
+  <tr>
+    <th>情報公開
+    <td><%= form.radio_button :public, 1 %>
+      <%= form.label :public_1, "公開" %>
+      <%= form.radio_button :public, 2 %>
+      <%= form.label :public_2, "非公開" %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.check_box :administrator %></th>
+    <td><%= form.label :administrator, "管理者" %></td>
+  </tr>
+</table>

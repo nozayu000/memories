@@ -2,7 +2,9 @@
 
 <h1><%= @page_title %></h1>
 
-<div class ="toolbar"><%= link_to "編集", edit_member_path %></div>
+<div class ="toolbar">
+  <%= link_to "編集", edit_member_path(@member) %>
+</div>
 
 <table class ="attr">
   <tr>
