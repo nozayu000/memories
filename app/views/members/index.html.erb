@@ -20,9 +20,9 @@
   <tbody>
     <% @members.each do |member| %>
       <tr>
-        <td><%= link_to member.name, member %></td>
+        <td><%= link_to member.nickname, member %></td>
         <td><%= member.full_name %></td>
-        <td><%= link_to "編集", edit_member_path(params[:id]) %>　｜
+        <td><%= link_to "編集", [:edit, member] %>　｜
             <%= link_to "削除", member,method: :delete,
                 data: { confirm: "本当に削除しますか？" } %>
       </tr>

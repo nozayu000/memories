@@ -3,6 +3,7 @@ fnames = ["有田","徳井","博多","中川"]
 gnames = ["和子","理沙","怜"]
 0.upto(9) do |idx|
   Member.create(
+    number: idx + 10,
     nickname: nicknames[idx],
     full_name: "#{fnames[idx % 4]} #{gnames[idx % 3]}",
     email: "#{nicknames[idx]}@exsample.com",
