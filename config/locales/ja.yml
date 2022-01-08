@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      member: メンバー情報
+    attributes:
+      member:
+        nickname: ニックネーム
+        full_name: 名前
+        birthday: 誕生日
+        email: 連絡先(e-mail)
+        public: 情報公開
+        public_1: 公開
+        public_2: 非公開
+        administrator: 管理者
