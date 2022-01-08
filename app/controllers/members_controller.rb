@@ -6,6 +6,7 @@ class MembersController < ApplicationController
 
   #会員情報の詳細
   def show
+    
     @member = Member.find(params[:id])
   end
 
@@ -33,13 +34,13 @@ class MembersController < ApplicationController
       redirect_to @member, notice: "会員情報を更新しました"
     else
       render "edit"
-    end 
+    end
   end
 
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    redirect_to :member, notice: "会員を削除しました"
+    redirect_to @member, notice: "会員を削除しました"
   end
 
   def search

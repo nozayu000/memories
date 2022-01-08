@@ -22,7 +22,7 @@
       <tr>
         <td><%= link_to member.nickname, member %></td>
         <td><%= member.full_name %></td>
-        <td><%= link_to "編集", [:edit, member] %>　｜
+        <td><%= link_to "編集", edit_member_path(member.id) %>　｜
             <%= link_to "削除", member,method: :delete,
                 data: { confirm: "本当に削除しますか？" } %>
       </tr>
