@@ -1,12 +1,10 @@
 class MembersController < ApplicationController
-  # 会員一覧
+
   def index
     @members = Member.order(params[:id])
   end
 
-  #会員情報の詳細
   def show
-    
     @member = Member.find(params[:id])
   end
 
@@ -17,7 +15,7 @@ class MembersController < ApplicationController
   def edit
     @member = Member.find(params[:id])
   end
-  # 会員の新規登録
+
   def create
     @member = Member.new(params[:member])
     if @member.save
