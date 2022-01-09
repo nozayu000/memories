@@ -1,0 +1,28 @@
+<table class ="attr">
+  <tr>
+    <th>ニックネーム</th>
+    <td><%= @member.nickname %></td>
+  </tr>
+  <tr>
+    <th>氏名</th>
+    <td><%= @member.full_name %></td>
+  </tr>
+  <tr>
+    <th>メールアドレス</th>
+    <td><%= @member.email %></td>
+  </tr>
+  <tr>
+    <th>誕生日</th>
+    <!--&.演算子-->
+    <!--誕生日の情報がnilの場合、エラーになるため-->
+    <td><%= @member.birthday&.strftime("%Y年%m月%d日") %></td>
+  </tr>
+  <tr>
+    <th>情報公開</th>
+    <td><%= @member.public == 1 ? "公開" : "非公開" %></td>
+  </tr>
+  <tr>
+    <th>管理者</th>
+    <td><%= @member.administrator? ? "◯" : "ー" %></td>
+  </tr>
+</table>

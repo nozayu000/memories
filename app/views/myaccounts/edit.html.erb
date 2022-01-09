@@ -1,0 +1,13 @@
+<% @page_title = "マイページの編集" %>
+
+<h1><%= @page_title %></h1>
+
+<div class ="toolbar">
+  <%= link_to "戻る", myaccount_path %>
+</div>
+
+<%= form_with model:@member, url: myaccount_path, local: true do |form| %>
+  <%= render "common/member_form", form: form %>
+  <div><%= form.submit %></div>
+<% end %>
+

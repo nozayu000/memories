@@ -17,7 +17,7 @@ class Member < ApplicationRecord
   # 一意性（メールアドレスが他のユーザーと被らないように）の検証
   validates :email, {presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }}
   
-
+  
 
   class << self
     def search(query)

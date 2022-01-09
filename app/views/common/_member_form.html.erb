@@ -27,10 +27,12 @@
       <%= form.label :public_2 %>
     </td>
   </tr>
+  <% if controller.kind_of?(MembersController) %>
   <tr>
     <th><%= Member.human_attribute_name(:administrator) %></th>
     <td>
-      <%= form.check_box :administrator %>
+      <%= form.check_box :administrator,
+              disabled: !current_member.administrator? %>
       <%= form.label :administrator %>
     </td>
   </tr>
@@ -38,4 +40,6 @@
     <th><%= form.label :password %></th>
     <td><%= form.text_field :password %></td>
   </tr>
+  <% end %>
+  
 </table>

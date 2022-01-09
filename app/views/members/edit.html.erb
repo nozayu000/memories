@@ -6,7 +6,7 @@
 </div>
 
 <%= form_with model:@member, local: true do |form| %>
-  <%= render "form", form: form %>
+  <%= render "common/member_form", form: form %>
   <div><%= form.submit %></div>
 <% end %>
 

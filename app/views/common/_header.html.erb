@@ -2,7 +2,7 @@
 
 <% if current_member %>
 <ul class ="account_menu">
-  <%= current_member.nickname + "さん" %>
+  <%= menu_link_to current_member.nickname + "さん", :myaccount %>
   <%= menu_link_to "ログアウト", :session,
         method: :delete, data: { confirm: "ログアウトしますか？" } %>
 </ul>
@@ -11,9 +11,12 @@
 <nav class="menubar">
   <ul>
     <%= menu_link_to "TOP", :root %>
-    <%= menu_link_to "新着動画", "#" %>
-    <%= menu_link_to "投稿動画", "#" %>
-    <%= menu_link_to "メンバー", :members %>
-    <%= menu_link_to "管理ページ", "#" %>
+    <!--会員のみ閲覧可能にする-->
+    <% if current_member %>
+      <%= menu_link_to "新着動画", "#" %>
+      <%= menu_link_to "投稿動画", "#" %>
+      <%= menu_link_to "メンバー", :members %>
+      <%= menu_link_to "管理ページ", "#" %>
+    <% end %>
   </ul>
 </nav>

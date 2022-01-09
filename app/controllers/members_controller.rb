@@ -1,5 +1,6 @@
 class MembersController < ApplicationController
-
+  before_action :login_required
+  
   def index
     @members = Member.order(params[:id])
   end
