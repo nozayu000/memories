@@ -6,8 +6,9 @@
   <%= link_to "戻る", myaccount_path %>
 </div>
 
-<%= form_with model:@member, url: myaccount_path, local: true do |form| %>
+<%= form_with model:@member, as: "account", url: myaccount_path, local: true do |form| %>
   <%= render "common/member_form", form: form %>
-  <div><%= form.submit %></div>
+  <div><%= form.submit value="変更" %></div>
 <% end %>
+
 

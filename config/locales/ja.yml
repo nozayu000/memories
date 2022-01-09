@@ -12,4 +12,9 @@ ja:
         public_1: 公開
         public_2: 非公開
         administrator: 管理者
-        password: パスワード
+        password: 新しいパスワード
+        current_password: 現在のパスワード
+        password_confirmation: 新しいパスワードの確認
+    errors:
+      messages:
+        wrong: が正しくありません。

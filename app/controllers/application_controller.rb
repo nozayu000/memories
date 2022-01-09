@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
       Member.find_by(id: session[:member_id])
     end
   end
+  # 引数に指定された名前のメソッドをテンプレートでも
+  # 使用できるようにするヘルパーメソッド
   helper_method :current_member
 
   class LoginRequired < StandardError; end

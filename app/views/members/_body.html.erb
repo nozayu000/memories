@@ -21,8 +21,15 @@
     <th>情報公開</th>
     <td><%= @member.public == 1 ? "公開" : "非公開" %></td>
   </tr>
+  <% if current_member.id == @member.id %>
+  <tr>
+    <th>パスワード</th>
+    <td><%= @member.password %></td>
+  </tr>
+  <% end %>
   <tr>
     <th>管理者</th>
     <td><%= @member.administrator? ? "◯" : "ー" %></td>
   </tr>
+  
 </table>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'password/edit'
   get 'myaccounts/show'
   get 'myaccounts/edit'
   root "top#index"
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   resources :members do
     get "search", on: :collection
   end
-
+  # 単数リソース
   resource :session, only: [:create, :destroy]
   resource :myaccount, only: [:show, :edit, :update]
   resource :password, only: [:show, :edit, :update]

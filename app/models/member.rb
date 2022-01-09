@@ -1,4 +1,5 @@
 class Member < ApplicationRecord
+  # パスワード空文字禁止
   has_secure_password
   
   # ニックネーム
@@ -18,9 +19,10 @@ class Member < ApplicationRecord
   validates :email, {presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }}
   
   # パスワード
-  # accessorメソッド（読み書き療養のメソッド）
-  attr_accessor :current_member
-  validates :password, presence: { if: :current_password}
+  # accessorメソッド（読み書き両用のメソッド）
+  attr_accessor :current_password
+  # ２行目とは別のvali/新規作成されるときのみ稼働
+  validates :password, presence: { if: :current_password }
 
 
   class << self
