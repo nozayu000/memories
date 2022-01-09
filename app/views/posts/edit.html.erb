@@ -1,0 +1,10 @@
+<% @page_title = "投稿記事の編集" %>
+
+<h1><%= @page_title %></h1>
+
+<p><%= link_to "戻る", post_path, method: :get %></p>
+
+<%= form_with model:@post, url: edit_post_path, local: true do |form| %>
+  <%= render "form", for: form %>
+  <div><%= form.submit %></div>
+<% end %>

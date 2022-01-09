@@ -1,0 +1,24 @@
+<% @page_title = "投稿記事" %>
+
+<h1><%= @page_title %></h1>
+
+<div class="toolbar"><%= link_to "新規投稿", new_post_path %></div>
+
+<% if @post.present? %>
+
+  <% @posts.each do |post| %>
+    <div class="post-item">
+      <div class="post-image"><%= image_tag('img/forest.jpg',  class: 'post-image') %></div>
+      <section class="post-text">
+        <h3 class="post-text-heading"><%= link_to post.title, post_path(post) %></h3>
+        <p class="post-date"><%= post.created_at %></p>
+      </section>
+    </div>
+    <%= link_to "編集", edit_post_path(post.id) %>|
+    <%= link_to "削除", post_path, method: :delete,
+        data: {confirm: "本当に削除しますか？"} %>
+    
+  <% end %>
+<% else %>
+  <p>投稿記事がありません</p>
+<% end %>

@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class PasswordControllerTest < ActionDispatch::IntegrationTest
+class PasswordsControllerTest < ActionDispatch::IntegrationTest
   test "should get edit" do
-    get password_edit_url
+    get passwords_edit_url
     assert_response :success
   end
 

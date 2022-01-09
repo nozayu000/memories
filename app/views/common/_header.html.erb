@@ -11,10 +11,11 @@
 <nav class="menubar">
   <ul>
     <%= menu_link_to "TOP", :root %>
+    <%= menu_link_to "About", about_path %>
     <!--会員のみ閲覧可能にする-->
     <% if current_member %>
       <%= menu_link_to "新着", "#" %>
-      <%= menu_link_to "投稿", "#" %>
+      <%= menu_link_to "投稿", :post %>
       <%= menu_link_to "メンバー", :members %>
       <%= menu_link_to "管理ページ", "#" %>
     <% end %>

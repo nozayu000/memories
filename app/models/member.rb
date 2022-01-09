@@ -24,15 +24,4 @@ class Member < ApplicationRecord
   # ２行目とは別のvali/新規作成されるときのみ稼働
   validates :password, presence: { if: :current_password }
 
-
-  class << self
-    def search(query)
-      rel = order(params[:id])
-      if query.present?
-        rel = rel.where("nickname LIKE ? OR full_name LIKE ?",
-        "%#{query}%", "%#{query}%")
-      end
-      rel
-    end
-  end
 end
