@@ -1,5 +1,13 @@
 <%= image_tag "logo.png", size: "200x100", alt: "Memories" %>
 
+<% if current_member %>
+<ul class ="account_menu">
+  <%= current_member.nickname + "さん" %>
+  <%= menu_link_to "ログアウト", :session,
+        method: :delete, data: { confirm: "ログアウトしますか？" } %>
+</ul>
+<% end %>
+
 <nav class="menubar">
   <ul>
     <%= menu_link_to "TOP", :root %>

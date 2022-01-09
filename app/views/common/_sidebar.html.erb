@@ -1,4 +1,4 @@
-<%= render "common/login_form" %>
+<%= render "common/login_form" unless current_member %>
 <h2>新着</h2>
 <ul>
   <% 5.times do |i| %>
