@@ -27,13 +27,6 @@
       <%= form.label :public_2 %>
     </td>
   </tr>
-  <!--ログイン中のIDと会員IDが一致したら表示させる-->
-  <% if current_member.id == @member.id %>
-  <tr>
-    <th><%= form.label :パスワード %></th>
-    <td><%= @member.password %></td>
-  </tr>
-  <% end %>
   <!--初期パスワード入力のフォーム-->
   <% if @member.new_record? %>
   <tr>

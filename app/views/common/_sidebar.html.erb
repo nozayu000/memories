@@ -1,12 +1,13 @@
-<%= render "common/login_form" unless current_member %>
+<%= render "common/login_form" %>
+
 <h2>新着</h2>
 <ul>
-  <% 5.times do |i| %>
-    <li><%= link_to "新着動画の見出し", "#" %></li>
-  <% end %>
+  <%# @articles.each do |article| %>
+    <li><%#= link_to article.title, article %></li>
+  <%# end %>
 </ul>
 
-<h2>会員のブログ</h2>
+<h2>メンバーのブログ</h2>
 <ul>
   <% 5.times do |i| %>
     <li><%= link_to "ブログの見出し", "#" %></li>

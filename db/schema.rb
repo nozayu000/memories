@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_09_133608) do
+ActiveRecord::Schema.define(version: 2022_01_10_020732) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body", null: false
+    t.boolean "member_only", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "members", force: :cascade do |t|
     t.string "nickname", null: false
@@ -23,22 +31,6 @@ ActiveRecord::Schema.define(version: 2022_01_09_133608) do
     t.datetime "updated_at", null: false
     t.integer "phone"
     t.string "password_digest"
-    t.index ["email"], name: "index_members_on_email", unique: true
-  end
-
-  create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "body", null: false
-    t.boolean "member_only", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

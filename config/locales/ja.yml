@@ -2,7 +2,7 @@ ja:
   activerecord:
     models:
       member: メンバー情報
-      post: 投稿
+      article: 投稿記事
     attributes:
       member:
         nickname: ニックネーム
@@ -16,7 +16,7 @@ ja:
         password: 新しいパスワード
         current_password: 現在のパスワード
         password_confirmation: 新しいパスワードの確認
-      post:
+      articles:
         title: タイトル
         body: 本文
         member_only: メンバー限定

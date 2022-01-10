@@ -1,0 +1,12 @@
+<%= render "common/errors", obj: @article %>
+
+<table class ="attr">
+  <tr>
+    <th><%= form.label :title %></th>
+    <td><%= form.text_field :title, size: 25 %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :body %></th>
+    <td><%= form.text_area :body, size: 50 %></td>
+  </tr>
+</table>

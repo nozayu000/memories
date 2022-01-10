@@ -1,0 +1,27 @@
+<% @page_title = @article.title %>
+
+<h1><%= @page_title %></h1>
+
+<% if current_member %>
+  <div class ="toolbar">
+    <%= link_to "編集", edit_article_path %>|
+    <%= link_to "削除", article_path, method: :delete,
+        data: {confirm: "本当に削除しますか？"} %>
+  </div>
+<% end %>
+
+  <section class="single-article">
+
+    <section class="article-box">
+      <h3 class="article-box-heading">
+        <%= @article.title %>      </h3>
+      <div class="article-box-content">
+        <p class="article-date">
+          <%= @article.created_at %>
+        </p>
+      </div>
+      <%= image_tag "img/forest.jpg", class:"single-image" %>
+      <p class="single-text">
+        <%= @article.body %>      
+      </p>
+      <div class="author-case">
