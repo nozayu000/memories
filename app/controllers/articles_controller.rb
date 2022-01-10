@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    # idの降順で表示
+    # idの降順で表示[.order(id: "DESC")]=>asc昇降と迷った場合にはreverse_order使用
     @articles = Article.page(params[:page]).reverse_order
   end
 
