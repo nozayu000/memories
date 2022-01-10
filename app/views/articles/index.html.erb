@@ -18,6 +18,7 @@
     <%= link_to "削除", article, method: :delete,
         data: {confirm: "本当に削除しますか？"} %>
   <% end %>
+  <%= paginate @articles %>
 <% else %>
   <p>投稿記事がありません</p>
 <% end %>

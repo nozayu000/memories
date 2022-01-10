@@ -2,7 +2,9 @@ class MembersController < ApplicationController
   before_action :login_required
 
   def index
-    @members = Member.order(params[:id])
+    # ページネーション付き
+    @members = Member.page(params[:page]).reverse_order
+
   end
 
   def show

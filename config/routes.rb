@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   resource :session, only: [:create, :destroy]
   resource :myaccount, only: [:show, :edit, :update]
   resource :password, only: [:show, :edit, :update]
-  
 
   resources :articles
-  
+
 end
