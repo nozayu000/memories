@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   class Fobidden < StandardError;end
 
   private
-  
+
   def login_required
     raise LoginRequired unless current_member
   end

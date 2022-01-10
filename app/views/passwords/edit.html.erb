@@ -6,7 +6,7 @@
   <%= link_to "マイページに戻る", myaccount_path %>
 </div>
 
-<%= form_with model:@member, as: "myaccount", url: password_path, local: true do |form| %>
+<%= form_with model:@member, url: password_path, local: true do |form| %>
   <%= render "common/errors", obj: @member %>
   <table class ="attr" >
     <tr>

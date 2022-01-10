@@ -11,7 +11,7 @@ class PasswordsController < ApplicationController
 
   def update
     @member = current_member
-    current_password = params[:current_password]
+    current_password = params[:myaccount][:current_password]
 
     if current_password.present?
       # 現在のパスが正しいか確認

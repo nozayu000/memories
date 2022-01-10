@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   before_action :login_required
-  
+
   def index
     @members = Member.order(params[:id])
   end
@@ -20,7 +20,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(params[:member])
     if @member.save
-      redirect_to @member, notice: "会員登録しました"
+      redirect_to @member, notice: "新しいメンバーを登録しました"
     else
       render "new"
     end
@@ -30,7 +30,7 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
     @member.update(params[:member])
     if @member.save
-      redirect_to @member, notice: "会員情報を更新しました"
+      redirect_to @member, notice: "メンバー情報を更新しました"
     else
       render "edit"
     end
@@ -39,7 +39,7 @@ class MembersController < ApplicationController
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    redirect_to @member, notice: "会員を削除しました"
+    redirect_to @member, notice: "メンバーを削除しました"
   end
 
   def search

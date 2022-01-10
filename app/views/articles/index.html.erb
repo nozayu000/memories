@@ -1,21 +1,21 @@
-<% @page_title = "投稿記事" %>
+<% @page_title = "投稿一覧" %>
 
 <h1><%= @page_title %></h1>
 
 <div class="toolbar"><%= link_to "新規投稿", new_article_path %></div>
 
-<% if @article.present? %>
+<% if @articles.present? %>
 
   <% @articles.each do |article| %>
     <div class="article-item">
-      <div class="article-image"><%= image_tag('img/forest.jpg',  class: 'article-image') %></div>
+      <div class="article-image"><%#= image_tag('img/forest.jpg',  class: 'article-image') %></div>
       <section class="article-text">
         <h3 class="article-text-heading"><%= link_to article.title, article_path(article) %></h3>
         <p class="article-date"><%= article.created_at %></p>
       </section>
     </div>
     <%= link_to "編集", edit_article_path(article.id) %>|
-    <%= link_to "削除", article_path, method: :delete,
+    <%= link_to "削除", article, method: :delete,
         data: {confirm: "本当に削除しますか？"} %>
   <% end %>
 <% else %>

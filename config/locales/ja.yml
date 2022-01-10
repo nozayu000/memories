@@ -16,7 +16,7 @@ ja:
         password: 新しいパスワード
         current_password: 現在のパスワード
         password_confirmation: 新しいパスワードの確認
-      articles:
+      article:
         title: タイトル
         body: 本文
         member_only: メンバー限定

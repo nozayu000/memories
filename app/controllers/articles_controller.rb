@@ -1,15 +1,14 @@
 class ArticlesController < ApplicationController
-  before_action :login_required
+  before_action :login_required,except: [:index, :show]
 
   def new
     @article = Article.new
   end
 
   def create
-    # articleかも
-    @article = Article.new(article_params)
+    @article = Article.new(params[:article])
     if @article.save
-      redirect_to @article, notice: "記事を投稿しました。"
+      redirect_to @article, notice: "記事を投稿しました"
     else
       render "new"
     end
@@ -17,7 +16,7 @@ class ArticlesController < ApplicationController
 
   def index
     # idの降順で表示
-    @articles = Article.all.order(id: "DESC")
+    @articles = Article.order(id: "DESC")
   end
 
   def show
@@ -30,14 +29,18 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.update(article_params)
+    @article.update(params[:article])
     if @article.save
-      redirect_to article_path(article)
+      redirect_to @article, notice:"記事を更新しました"
+    else
+      render "edit"
     end
   end
-  private
-  def article_params
-    params.require(:article).permit(:title, :body)
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to @article, notice: "記事を削除しました"
   end
 
 end
