@@ -3,6 +3,7 @@ ja:
     models:
       member: メンバー情報
       article: 投稿記事
+      blog: ブログ
     attributes:
       member:
         nickname: ニックネーム
@@ -20,6 +21,9 @@ ja:
         title: タイトル
         body: 本文
         member_only: メンバー限定
+      blog:
+        title: タイトル
+        body: 本文
     errors:
       messages:
         wrong: が正しくありません。

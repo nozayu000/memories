@@ -1,0 +1,6 @@
+<% @page_title = @blog.title + "-" + @blog.member_id.nickname + "さんのブログ" %>
+<h1><%= @blog.member_id.nickname %>さんのブログ</h1>
+<h2><%= @blog.title %></h2>
+
+<%= simple_format(@blog.body) %>
+<%= render "footer", blog: @blog %>

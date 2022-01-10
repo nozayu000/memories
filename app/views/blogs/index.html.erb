@@ -1,0 +1,17 @@
+<% @page_title = @member ? @member.nickname + "さんのブログ" : "メンバーのブログ" %>
+<h1><%= @page_title %></h1>
+
+<% if current_member %>
+<div class ="toolbar"><%= link_to "ブログの作成", new_blog_path %></div>
+<% end %>
+
+<% if @blogs.present? %>
+  <% @blogs.each do |blog| %>
+    <h2><%= blog.title %></h2>
+    <p><%= blog.body %></p>
+    <%= render "footer", blog: blog %>
+  <% end %>
+  <%= paginate @blogs %>
+<% else %>
+  <P>ブログの投稿がありません</P>
+<% end %>
