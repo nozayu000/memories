@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   def new
-    @blog = Blog.new
+    @blog = Blog.new(posted_at: Time.current)
   end
 
   def create
