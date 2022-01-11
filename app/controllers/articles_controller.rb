@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  # except:コールバック対象外
   before_action :login_required,except: [:index, :show]
 
   def new

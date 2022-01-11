@@ -3,7 +3,6 @@
 <h1><%= @page_title %></h1>
 <div class = "toolbar"><%= link_to "一覧に戻る", members_path %></div>
 
-
 <%= form_with model:@member, local: true do |form| %>
   <%= render "common/member_form", form: form %>
   <div><%= form.submit "登録" %></div>
