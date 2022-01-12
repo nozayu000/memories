@@ -2,7 +2,7 @@ class Member < ApplicationRecord
   # パスワード空文字禁止
   has_secure_password
 
-  has_many :blogs, dependent: :destroy
+  
   # ニックネーム
   validates :nickname, presence: true,
     length: { minimum: 2, maximum: 20,allow_blank: true},
@@ -26,4 +26,6 @@ class Member < ApplicationRecord
 
   # 情報公開（情報公開許可した者だけ選別）
   # scope :common, -> {where(public: "1")}
+  
+  
 end
