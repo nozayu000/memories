@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params[:article])
+    @article = Article.new(article_params)
     if @article.save
       redirect_to @article, notice: "記事を投稿しました"
     else
@@ -31,9 +31,9 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.update(params[:article])
+    @article.update(article_params)
     if @article.save
-      redirect_to @article, notice:"記事を更新しました"
+      redirect_to @article, notice: "記事を更新しました"
     else
       render "edit"
     end
@@ -45,4 +45,8 @@ class ArticlesController < ApplicationController
     redirect_to @article, notice: "記事を削除しました"
   end
 
+  private
+  def article_params
+    params.require(:article).permit(:title, :body)
+  end
 end

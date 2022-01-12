@@ -11,7 +11,7 @@ class MyaccountsController < ApplicationController
 
   def update
     @member = current_member
-    @member.update(params[:member])
+    @member.update(myaccount_params)
     if @member.save
       redirect_to :myaccount, notice: "マイページを編集しました。"
     else
@@ -19,6 +19,10 @@ class MyaccountsController < ApplicationController
     end
   end
 
+  private
+  def myaccount_params
+    params.require(:myaccount).permit(:nickname, :full_name, :birthday, :email, :public)
+  end
 end
 
 
